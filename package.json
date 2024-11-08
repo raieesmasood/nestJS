@@ -1,0 +1,14 @@
+{
+  "name": "premier-core",
+  "version": "1.0.0",
+  "description": "## Introduction",
+  "main": "backend/index.js",
+  "scripts": {
+    "start": "cd  backend && npm run serve",
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

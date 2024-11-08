@@ -1,0 +1,30 @@
+services:
+
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    env_file:
+      - .env
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+      - '15432:80'
+    env_file:
+      - .env
+
+  backend:
+    build:
+      context: .
+      dockerfile: './Dockerfile'
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_module
+    ports:
+      - '3001:3000'
+    command: npm run start:dev
