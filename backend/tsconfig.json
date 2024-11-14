@@ -17,5 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-  }
+  },
+  "include": [
+    "src/**/*.ts",  // Include all TypeScript files in your source directory
+    "types/**/*.d.ts"  // Include all .d.ts files from the types directory
+  ],
+  "typeRoots": [
+    "./node_modules/@types",  // Default type definitions
+    "./types"  // Your custom types folder
+  ]
 }

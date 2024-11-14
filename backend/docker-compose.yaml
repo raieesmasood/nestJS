@@ -26,5 +26,5 @@ services:
       - ./:/usr/src/app/
       - /usr/src/app/node_module
     ports:
-      - '3001:3000'
+      - '3001:3001'
     command: npm run start:dev
